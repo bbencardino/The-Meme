@@ -2,11 +2,10 @@ import UIKit
 
 class TextFieldDelegate: NSObject, UITextFieldDelegate {
 
-    let topDefaultText = "TOP TEXT"
-    let BottomDefaultText = "BOTTOM TEXT"
+    var viewModel = MemeViewModel()
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text == topDefaultText || textField.text == BottomDefaultText {
+        if textField.text == viewModel.topDefaultText || textField.text == viewModel.bottomDefaultText {
             textField.text = ""
         }
     }

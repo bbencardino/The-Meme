@@ -44,7 +44,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yH8-WY-Kpf" secondAttribute="trailing" id="32c-DS-ebp"/>
                                     <constraint firstAttribute="height" constant="280" id="B2k-8G-rhh"/>
@@ -53,13 +53,13 @@
                                     <constraint firstItem="yH8-WY-Kpf" firstAttribute="leading" secondItem="3eQ-9R-7rL" secondAttribute="leading" id="a0S-ai-2Z3"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-ru-A6C">
-                                <rect key="frame" x="191" y="313" width="32" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-ru-A6C">
+                                <rect key="frame" x="8" y="337" width="398" height="18.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="psS-rY-43v">
-                                <rect key="frame" x="191" y="559" width="32" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="psS-rY-43v">
+                                <rect key="frame" x="8" y="550.33333333333337" width="398" height="18.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -82,14 +82,18 @@
                             <constraint firstItem="fIk-xP-74D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Py-Ty-dgF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3eQ-9R-7rL" secondAttribute="trailing" id="3nZ-kr-Pmj"/>
                             <constraint firstItem="3cs-ru-A6C" firstAttribute="centerX" secondItem="yH8-WY-Kpf" secondAttribute="centerX" id="4uq-h1-2CF"/>
+                            <constraint firstItem="3cs-ru-A6C" firstAttribute="trailing" secondItem="yH8-WY-Kpf" secondAttribute="trailing" constant="-8" id="6A1-6F-1xK"/>
                             <constraint firstItem="psS-rY-43v" firstAttribute="centerX" secondItem="yH8-WY-Kpf" secondAttribute="centerX" id="Dca-a2-b0i"/>
                             <constraint firstItem="3eQ-9R-7rL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ggz-OH-joK"/>
+                            <constraint firstItem="psS-rY-43v" firstAttribute="leading" secondItem="yH8-WY-Kpf" secondAttribute="leading" constant="8" id="I17-w8-xE4"/>
+                            <constraint firstItem="3cs-ru-A6C" firstAttribute="leading" secondItem="yH8-WY-Kpf" secondAttribute="leading" constant="8" id="KyP-rF-Hh8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a8I-Xn-8Js" secondAttribute="trailing" id="MrM-0z-iRM"/>
+                            <constraint firstItem="psS-rY-43v" firstAttribute="trailing" secondItem="yH8-WY-Kpf" secondAttribute="trailing" constant="-8" id="V3H-ES-nPG"/>
                             <constraint firstItem="fIk-xP-74D" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="11" id="Xi1-M5-NMC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fIk-xP-74D" secondAttribute="trailing" id="bLK-4I-3fh"/>
                             <constraint firstItem="a8I-Xn-8Js" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="cuA-Cs-Xdn"/>
-                            <constraint firstItem="psS-rY-43v" firstAttribute="bottom" secondItem="yH8-WY-Kpf" secondAttribute="bottom" id="lO3-Ru-pfM"/>
-                            <constraint firstItem="3cs-ru-A6C" firstAttribute="top" secondItem="yH8-WY-Kpf" secondAttribute="top" id="mSO-xG-82k"/>
+                            <constraint firstItem="psS-rY-43v" firstAttribute="bottom" secondItem="yH8-WY-Kpf" secondAttribute="bottom" constant="-24" id="lO3-Ru-pfM"/>
+                            <constraint firstItem="3cs-ru-A6C" firstAttribute="top" secondItem="yH8-WY-Kpf" secondAttribute="top" constant="24" id="mSO-xG-82k"/>
                             <constraint firstItem="3eQ-9R-7rL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ysm-Zc-aFk"/>
                         </constraints>
                     </view>
@@ -109,6 +113,9 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -15,6 +15,7 @@
 		5E09FAE327EB675C00015773 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E09FAE127EB675C00015773 /* LaunchScreen.storyboard */; };
 		5E52B32127F37BAB001AD6FC /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B32027F37BAB001AD6FC /* MemeViewModel.swift */; };
 		5E52B32427F37DDC001AD6FC /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B32327F37DDC001AD6FC /* TextFieldDelegate.swift */; };
+		5E52B32827F462AB001AD6FC /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B32727F462AB001AD6FC /* ImagePickerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5E09FAE427EB675C00015773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E52B32027F37BAB001AD6FC /* MemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewModel.swift; sourceTree = "<group>"; };
 		5E52B32327F37DDC001AD6FC /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		5E52B32727F462AB001AD6FC /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,7 @@
 			children = (
 				5E09FAD627EB675A00015773 /* AppDelegate.swift */,
 				5E09FAD827EB675A00015773 /* SceneDelegate.swift */,
-				5E09FADA27EB675A00015773 /* MemeViewController.swift */,
-				5E52B32027F37BAB001AD6FC /* MemeViewModel.swift */,
+				5E52B32527F461F3001AD6FC /* MEME */,
 				5E52B32227F37DC5001AD6FC /* Delegate */,
 				5E09FADC27EB675A00015773 /* Main.storyboard */,
 				5E09FADF27EB675C00015773 /* Assets.xcassets */,
@@ -77,8 +78,18 @@
 			isa = PBXGroup;
 			children = (
 				5E52B32327F37DDC001AD6FC /* TextFieldDelegate.swift */,
+				5E52B32727F462AB001AD6FC /* ImagePickerDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		5E52B32527F461F3001AD6FC /* MEME */ = {
+			isa = PBXGroup;
+			children = (
+				5E09FADA27EB675A00015773 /* MemeViewController.swift */,
+				5E52B32027F37BAB001AD6FC /* MemeViewModel.swift */,
+			);
+			path = MEME;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +166,7 @@
 				5E09FADB27EB675A00015773 /* MemeViewController.swift in Sources */,
 				5E09FAD727EB675A00015773 /* AppDelegate.swift in Sources */,
 				5E52B32127F37BAB001AD6FC /* MemeViewModel.swift in Sources */,
+				5E52B32827F462AB001AD6FC /* ImagePickerDelegate.swift in Sources */,
 				5E52B32427F37DDC001AD6FC /* TextFieldDelegate.swift in Sources */,
 				5E09FAD927EB675A00015773 /* SceneDelegate.swift in Sources */,
 			);
@@ -306,6 +318,8 @@
 				DEVELOPMENT_TEAM = 6GU6D4AYLD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheMeme/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Meme can use your camera to make new memes ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The Meme can use your library to grab the not memed images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,6 +348,8 @@
 				DEVELOPMENT_TEAM = 6GU6D4AYLD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheMeme/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Meme can use your camera to make new memes ";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The Meme can use your library to grab the not memed images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
