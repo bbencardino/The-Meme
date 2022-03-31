@@ -7,6 +7,9 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var editorView: UIView!
     @IBOutlet weak var imageView: UIImageView!
 
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+
     @IBOutlet weak var topField: UITextField!
     @IBOutlet weak var bottomField: UITextField!
 
@@ -16,10 +19,13 @@ class MemeViewController: UIViewController {
     private lazy var textFieldDelegate = TextFieldDelegate(viewModel: viewModel)
     private lazy var imagePicker = ImagePickerDelegate { [weak self] image in
         self?.imageView.image = image
-        self?.imageView.contentMode = .scaleAspectFit
+        self?.shareButton.isEnabled = true
+        self?.imageView.contentMode = .scaleAspectFill
 
         self?.topField.text = self?.viewModel.topDefaultText
         self?.bottomField.text = self?.viewModel.bottomDefaultText
+        self?.topField.isEnabled = true
+        self?.bottomField.isEnabled = true
     }
 
     override func viewDidLoad() {
@@ -27,6 +33,8 @@ class MemeViewController: UIViewController {
 
         configureText(field: topField)
         configureText(field: bottomField)
+        shareButton.isEnabled = false
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,22 +43,20 @@ class MemeViewController: UIViewController {
         subscribeToWillShowNotifications()
         subscribeToWillHideNotifications()
     }
-  
-    @IBAction func addButton(_ sender: Any) {
 
+    @IBAction func pickFromLibrary(_ sender: Any) {
         let libraryController = UIImagePickerController()
         imagePicker.choose(from: .photoLibrary, with: libraryController)
         present(libraryController, animated: true)
-
-//        let cameraController = UIImagePickerController()
-//        imagePicker.choose(from: .camera, with: cameraController)
-//        present(cameraController, animated: true)
-
     }
 
-    @IBAction func pickFromCamera(_ sender: Any) {}
-    
-    @IBAction func shareButton(_ sender: Any) {
+    @IBAction func showCamera(_ sender: Any) {
+        let cameraController = UIImagePickerController()
+        imagePicker.choose(from: .camera, with: cameraController)
+        present(cameraController, animated: true)
+    }
+
+    @IBAction func shareMeme(_ sender: Any) {
         memedImage = viewModel.renderImage(from: editorView)
         let ac = UIActivityViewController(activityItems: [memedImage!],
                                           applicationActivities: nil)
@@ -61,7 +67,7 @@ class MemeViewController: UIViewController {
         present(ac, animated: true)
     }
 
-    @IBAction func cancelButton(_ sender: Any) {
+    @IBAction func cancelMeme(_ sender: Any) {
         cleanMemeEditorView()
     }
 
@@ -73,8 +79,11 @@ class MemeViewController: UIViewController {
 
     private func cleanMemeEditorView() {
         imageView.image = .none
+        topField.isEnabled = false
         topField.text = ""
+        bottomField.isEnabled = false
         bottomField.text = ""
+        shareButton.isEnabled = false
     }
 
     private func save() {

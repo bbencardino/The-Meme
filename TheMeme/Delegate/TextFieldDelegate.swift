@@ -21,7 +21,7 @@ final class TextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//TODO: TEM UM BUG QUANDO TENTA ABAIXAR O KEYBOARD /???? (METAL)
+
         let text = textField.text ?? ""
         textField.text = (text as NSString).replacingCharacters(in: range,
                                                                 with: string.uppercased())

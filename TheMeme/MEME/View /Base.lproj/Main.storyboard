@@ -22,12 +22,12 @@
                                 <color key="barTintColor" red="0.87281472339999999" green="0.97991861270000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="fOf-tU-hu1">
-                                        <barButtonItem key="leftBarButtonItem" id="n2f-kh-iea" userLabel="Save Button">
+                                        <barButtonItem key="leftBarButtonItem" id="n2f-kh-iea" userLabel="Share Button">
                                             <imageReference key="image" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
                                             <imageReference key="landscapeImage" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
                                             <color key="tintColor" systemColor="systemMintColor"/>
                                             <connections>
-                                                <action selector="shareButton:" destination="BYZ-38-t0r" id="hPw-im-UeY"/>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="rof-hU-85P"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" id="FI4-Dl-DeZ" userLabel="Cancel Button">
@@ -35,7 +35,7 @@
                                             <imageReference key="landscapeImage" image="trash.fill" catalog="system" symbolScale="large"/>
                                             <color key="tintColor" systemColor="systemMintColor"/>
                                             <connections>
-                                                <action selector="cancelButton:" destination="BYZ-38-t0r" id="DXF-PZ-dGA"/>
+                                                <action selector="cancelMeme:" destination="BYZ-38-t0r" id="neS-HI-7Qq"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -76,14 +76,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIk-xP-74D">
                                 <rect key="frame" x="0.0" y="854" width="428" height="49"/>
                                 <items>
-                                    <barButtonItem image="plus" catalog="system" id="JSE-6O-C11" userLabel="Add button">
+                                    <barButtonItem image="plus" catalog="system" id="JSE-6O-C11" userLabel="Add Button">
                                         <connections>
-                                            <action selector="addButton:" destination="BYZ-38-t0r" id="mQd-rA-DeP"/>
+                                            <action selector="pickFromLibrary:" destination="BYZ-38-t0r" id="hYf-9n-rxc"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem image="camera.on.rectangle" catalog="system" id="foj-zU-wUf" userLabel="Add button">
+                                    <barButtonItem image="camera.on.rectangle" catalog="system" id="foj-zU-wUf" userLabel="Camera Button">
                                         <connections>
-                                            <action selector="pickFromCamera:" destination="BYZ-38-t0r" id="Fhe-aK-Ggs"/>
+                                            <action selector="showCamera:" destination="BYZ-38-t0r" id="m9e-h0-o9G"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -108,8 +108,10 @@
                     </view>
                     <connections>
                         <outlet property="bottomField" destination="psS-rY-43v" id="1SN-KB-SJn"/>
+                        <outlet property="cameraButton" destination="foj-zU-wUf" id="I6d-v4-Evu"/>
                         <outlet property="editorView" destination="3eQ-9R-7rL" id="ZKW-Wg-7Yx"/>
                         <outlet property="imageView" destination="yH8-WY-Kpf" id="JYg-BB-RuG"/>
+                        <outlet property="shareButton" destination="n2f-kh-iea" id="SN7-qL-XwO"/>
                         <outlet property="topField" destination="3cs-ru-A6C" id="Y1x-9u-r3Q"/>
                     </connections>
                 </viewController>
