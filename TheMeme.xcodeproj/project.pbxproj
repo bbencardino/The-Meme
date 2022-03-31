@@ -70,7 +70,6 @@
 				5E09FAD827EB675A00015773 /* SceneDelegate.swift */,
 				5E52B32527F461F3001AD6FC /* MEME */,
 				5E52B32227F37DC5001AD6FC /* Delegate */,
-				5E09FADC27EB675A00015773 /* Main.storyboard */,
 				5E09FADF27EB675C00015773 /* Assets.xcassets */,
 				5E09FAE127EB675C00015773 /* LaunchScreen.storyboard */,
 				5E09FAE427EB675C00015773 /* Info.plist */,
@@ -100,6 +99,7 @@
 		5EB5F5E127F5C6040083E26D /* View  */ = {
 			isa = PBXGroup;
 			children = (
+				5E09FADC27EB675A00015773 /* Main.storyboard */,
 				5E09FADA27EB675A00015773 /* MemeViewController.swift */,
 				5EB5F5DC27F4CB0D0083E26D /* MoveViewWithKeyboard.swift */,
 			);

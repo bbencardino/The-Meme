@@ -10,12 +10,13 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var topField: UITextField!
     @IBOutlet weak var bottomField: UITextField!
 
+    private var memedImage: UIImage?
     static var activeTextField: UITextField? = nil
-    
+
     private lazy var textFieldDelegate = TextFieldDelegate(viewModel: viewModel)
     private lazy var imagePicker = ImagePickerDelegate { [weak self] image in
         self?.imageView.image = image
-        self?.imageView.contentMode = .scaleAspectFill
+        self?.imageView.contentMode = .scaleAspectFit
 
         self?.topField.text = self?.viewModel.topDefaultText
         self?.bottomField.text = self?.viewModel.bottomDefaultText
@@ -47,16 +48,36 @@ class MemeViewController: UIViewController {
 
     }
 
-    @IBAction func saveButton(_ sender: Any) {
-        let items = [viewModel.renderImage(from: editorView)]
-        let ac = UIActivityViewController(activityItems: items,
+    @IBAction func pickFromCamera(_ sender: Any) {}
+    
+    @IBAction func shareButton(_ sender: Any) {
+        memedImage = viewModel.renderImage(from: editorView)
+        let ac = UIActivityViewController(activityItems: [memedImage!],
                                           applicationActivities: nil)
+        ac.completionWithItemsHandler = { _, _, _, _ in
+            self.save()
+            self.cleanMemeEditorView()
+        }
         present(ac, animated: true)
+    }
+
+    @IBAction func cancelButton(_ sender: Any) {
+        cleanMemeEditorView()
     }
 
     private func configureText(field: UITextField) {
         field.delegate = textFieldDelegate
         field.defaultTextAttributes = viewModel.memeTextAttributes
         field.textAlignment = .center
+    }
+
+    private func cleanMemeEditorView() {
+        imageView.image = .none
+        topField.text = ""
+        bottomField.text = ""
+    }
+
+    private func save() {
+        _ = Meme(topText: topField.text!, bottomText: bottomField.text!, originalImage: imageView.image!, memedImage: memedImage!)
     }
 }

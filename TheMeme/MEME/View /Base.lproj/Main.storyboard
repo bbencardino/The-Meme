@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,11 +14,12 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MemeViewController" customModule="TheMeme" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="a8I-Xn-8Js">
-                                <rect key="frame" x="0.0" y="67" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="284"/>
+                                <color key="barTintColor" red="0.87281472339999999" green="0.97991861270000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="fOf-tU-hu1">
                                         <barButtonItem key="leftBarButtonItem" id="n2f-kh-iea" userLabel="Save Button">
@@ -26,30 +27,33 @@
                                             <imageReference key="landscapeImage" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
                                             <color key="tintColor" systemColor="systemMintColor"/>
                                             <connections>
-                                                <action selector="saveButton:" destination="BYZ-38-t0r" id="UDZ-3n-Rba"/>
+                                                <action selector="shareButton:" destination="BYZ-38-t0r" id="hPw-im-UeY"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" id="FI4-Dl-DeZ" userLabel="Cancel Button">
                                             <imageReference key="image" image="trash.fill" catalog="system" symbolScale="large"/>
-                                            <imageReference key="landscapeImage" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
+                                            <imageReference key="landscapeImage" image="trash.fill" catalog="system" symbolScale="large"/>
                                             <color key="tintColor" systemColor="systemMintColor"/>
+                                            <connections>
+                                                <action selector="cancelButton:" destination="BYZ-38-t0r" id="DXF-PZ-dGA"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eQ-9R-7rL" userLabel="Editor View">
-                                <rect key="frame" x="0.0" y="313" width="414" height="280"/>
+                                <rect key="frame" x="0.0" y="328" width="428" height="280"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yH8-WY-Kpf">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="280"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="psS-rY-43v">
-                                        <rect key="frame" x="8" y="245.33333333333337" width="398" height="18.666666666666686"/>
+                                        <rect key="frame" x="8" y="245.66666666666663" width="412" height="18.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-ru-A6C">
-                                        <rect key="frame" x="8" y="16" width="398" height="18.666666666666671"/>
+                                        <rect key="frame" x="8" y="16" width="412" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                     </textField>
@@ -70,15 +74,21 @@
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIk-xP-74D">
-                                <rect key="frame" x="0.0" y="824" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="854" width="428" height="49"/>
                                 <items>
                                     <barButtonItem image="plus" catalog="system" id="JSE-6O-C11" userLabel="Add button">
                                         <connections>
                                             <action selector="addButton:" destination="BYZ-38-t0r" id="mQd-rA-DeP"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem image="camera.on.rectangle" catalog="system" id="foj-zU-wUf" userLabel="Add button">
+                                        <connections>
+                                            <action selector="pickFromCamera:" destination="BYZ-38-t0r" id="Fhe-aK-Ggs"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.87281472339999999" green="0.97991861270000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,9 +99,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3eQ-9R-7rL" secondAttribute="trailing" id="3nZ-kr-Pmj"/>
                             <constraint firstItem="3eQ-9R-7rL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ggz-OH-joK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a8I-Xn-8Js" secondAttribute="trailing" id="MrM-0z-iRM"/>
+                            <constraint firstItem="3eQ-9R-7rL" firstAttribute="top" secondItem="a8I-Xn-8Js" secondAttribute="bottom" id="Vju-Oi-12A"/>
                             <constraint firstItem="fIk-xP-74D" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="11" id="Xi1-M5-NMC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fIk-xP-74D" secondAttribute="trailing" id="bLK-4I-3fh"/>
-                            <constraint firstItem="a8I-Xn-8Js" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="cuA-Cs-Xdn"/>
+                            <constraint firstItem="a8I-Xn-8Js" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cuA-Cs-Xdn"/>
                             <constraint firstItem="3eQ-9R-7rL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ysm-Zc-aFk"/>
                         </constraints>
                     </view>
@@ -108,6 +119,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera.on.rectangle" catalog="system" width="128" height="96"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
