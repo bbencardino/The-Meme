@@ -16,6 +16,7 @@
 		5E52B32127F37BAB001AD6FC /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B32027F37BAB001AD6FC /* MemeViewModel.swift */; };
 		5E52B32427F37DDC001AD6FC /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B32327F37DDC001AD6FC /* TextFieldDelegate.swift */; };
 		5E52B32827F462AB001AD6FC /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B32727F462AB001AD6FC /* ImagePickerDelegate.swift */; };
+		5EB5F5DD27F4CB0D0083E26D /* MoveViewWithKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5F5DC27F4CB0D0083E26D /* MoveViewWithKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5E52B32027F37BAB001AD6FC /* MemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewModel.swift; sourceTree = "<group>"; };
 		5E52B32327F37DDC001AD6FC /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
 		5E52B32727F462AB001AD6FC /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
+		5EB5F5DC27F4CB0D0083E26D /* MoveViewWithKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveViewWithKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				5E09FADA27EB675A00015773 /* MemeViewController.swift */,
 				5E52B32027F37BAB001AD6FC /* MemeViewModel.swift */,
+				5EB5F5DC27F4CB0D0083E26D /* MoveViewWithKeyboard.swift */,
 			);
 			path = MEME;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E09FADB27EB675A00015773 /* MemeViewController.swift in Sources */,
+				5EB5F5DD27F4CB0D0083E26D /* MoveViewWithKeyboard.swift in Sources */,
 				5E09FAD727EB675A00015773 /* AppDelegate.swift in Sources */,
 				5E52B32127F37BAB001AD6FC /* MemeViewModel.swift in Sources */,
 				5E52B32827F462AB001AD6FC /* ImagePickerDelegate.swift in Sources */,

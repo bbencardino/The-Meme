@@ -2,8 +2,7 @@ import UIKit
 
 class MemeViewController: UIViewController {
 
-    var viewModel = MemeViewModel()
-    var textFieldDelegate = TextFieldDelegate()
+    private let viewModel = MemeViewModel()
 
     @IBOutlet weak var editorView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -11,29 +10,37 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var topField: UITextField!
     @IBOutlet weak var bottomField: UITextField!
 
-    var imagePicker: ImagePickerDelegate!
+    static var activeTextField: UITextField? = nil
+    
+    private lazy var textFieldDelegate = TextFieldDelegate(viewModel: viewModel)
+    private lazy var imagePicker = ImagePickerDelegate { [weak self] image in
+        self?.imageView.image = image
+        self?.imageView.contentMode = .scaleAspectFill
+
+        self?.topField.text = self?.viewModel.topDefaultText
+        self?.bottomField.text = self?.viewModel.bottomDefaultText
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topField.defaultTextAttributes = viewModel.memeTextAttributes
-        bottomField.defaultTextAttributes = viewModel.memeTextAttributes
-
-        topField.delegate = textFieldDelegate
-        bottomField.delegate = textFieldDelegate
-
-        topField.textAlignment = .center
-        bottomField.textAlignment = .center
-
-        imagePicker = ImagePickerDelegate(onCompletion: { [weak self] image in
-            self?.imageView.image = image
-            self?.imageView.contentMode = .scaleAspectFill
-
-            self?.topField.text = self?.viewModel.topDefaultText
-            self?.bottomField.text = self?.viewModel.bottomDefaultText
-        })
+        configureText(field: topField)
+        configureText(field: bottomField)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        subscribeToWillShowNotifications()
+        subscribeToWillHideNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+//        unsubscribeFromKeyboardNotifications()
+//        unsubscribeToWillHideNotifications()
+    }
     @IBAction func addButton(_ sender: Any) {
 
         let libraryController = UIImagePickerController()
@@ -47,5 +54,10 @@ class MemeViewController: UIViewController {
     }
 
     @IBAction func saveButton(_ sender: Any) {}
-}
 
+    private func configureText(field: UITextField) {
+        field.delegate = textFieldDelegate
+        field.defaultTextAttributes = viewModel.memeTextAttributes
+        field.textAlignment = .center
+    }
+}

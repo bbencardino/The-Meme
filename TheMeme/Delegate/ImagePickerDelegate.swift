@@ -1,9 +1,9 @@
 import UIKit
 
-class ImagePickerDelegate: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class ImagePickerDelegate: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    //the parameter is the result(image) when the image is picked
-    let onCompletion: (UIImage)->()
+    // the parameter is the result(image) when the image is picked
+    private let onCompletion: (UIImage)->()
 
     init(onCompletion: @escaping (UIImage)->()) {
         self.onCompletion = onCompletion
@@ -21,6 +21,10 @@ class ImagePickerDelegate: NSObject, UIImagePickerControllerDelegate, UINavigati
         if let image = info[.originalImage] as? UIImage {
             onCompletion(image)
         }
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
 }

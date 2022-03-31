@@ -53,13 +53,13 @@
                                     <constraint firstItem="yH8-WY-Kpf" firstAttribute="leading" secondItem="3eQ-9R-7rL" secondAttribute="leading" id="a0S-ai-2Z3"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-ru-A6C">
-                                <rect key="frame" x="8" y="337" width="398" height="18.666666666666686"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="3cs-ru-A6C">
+                                <rect key="frame" x="8" y="337" width="398" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="psS-rY-43v">
-                                <rect key="frame" x="8" y="550.33333333333337" width="398" height="18.666666666666629"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="psS-rY-43v">
+                                <rect key="frame" x="8" y="535" width="398" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
