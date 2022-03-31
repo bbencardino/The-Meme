@@ -9,4 +9,13 @@ struct MemeViewModel {
                                                              .foregroundColor: UIColor.white,
                                                              .font: UIFont(name: "HelveticaNeue-CondensedBlack",size: 40)!,
                                                              .strokeWidth: -5]
+
+//MARK: - Meme genenator
+
+    func renderImage(from view: UIView) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: view.bounds)
+        return renderer.image { rendererContext in
+            view.layer.render(in: rendererContext.cgContext)
+        }
+    }
 }

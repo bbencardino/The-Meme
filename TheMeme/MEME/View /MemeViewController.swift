@@ -34,13 +34,7 @@ class MemeViewController: UIViewController {
         subscribeToWillShowNotifications()
         subscribeToWillHideNotifications()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-//        unsubscribeFromKeyboardNotifications()
-//        unsubscribeToWillHideNotifications()
-    }
+  
     @IBAction func addButton(_ sender: Any) {
 
         let libraryController = UIImagePickerController()
@@ -53,7 +47,12 @@ class MemeViewController: UIViewController {
 
     }
 
-    @IBAction func saveButton(_ sender: Any) {}
+    @IBAction func saveButton(_ sender: Any) {
+        let items = [viewModel.renderImage(from: editorView)]
+        let ac = UIActivityViewController(activityItems: items,
+                                          applicationActivities: nil)
+        present(ac, animated: true)
+    }
 
     private func configureText(field: UITextField) {
         field.delegate = textFieldDelegate
