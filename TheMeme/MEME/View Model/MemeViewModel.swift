@@ -1,6 +1,9 @@
 import UIKit
 
-struct MemeViewModel {
+class MemeViewModel {
+
+    var didTopTextFieldBeginEditing = false
+    var didBottomTextFieldBeginEditing = false
 
     let topDefaultText = "TOP TEXT"
     let bottomDefaultText = "BOTTOM TEXT"
@@ -10,8 +13,7 @@ struct MemeViewModel {
                                                              .font: UIFont(name: "HelveticaNeue-CondensedBlack",size: 40)!,
                                                              .strokeWidth: -5]
 
-//MARK: - Meme genenator
-
+    //MARK: - Meme genenator
     func renderImage(from view: UIView) -> UIImage {
         let renderer = UIGraphicsImageRenderer(bounds: view.bounds)
         return renderer.image { rendererContext in

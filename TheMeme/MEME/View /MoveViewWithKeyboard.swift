@@ -10,7 +10,7 @@ extension MemeViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-// MARK: -  Private Functions
+    //MARK: -  Private Functions
 
     @objc private func keyboardWillShow(notification: NSNotification) {
 
