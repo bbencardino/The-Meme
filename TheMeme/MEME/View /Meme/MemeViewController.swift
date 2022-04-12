@@ -93,7 +93,17 @@ class MemeViewController: UIViewController {
     }
 
     private func save() {
-        _ = Meme(topText: topField.text!, bottomText: bottomField.text!, originalImage: imageView.image!, memedImage: memedImage!)
+        let topText = topField.text ?? ""
+        let bottomText = bottomField.text ?? ""
+
+        let meme = Meme(topText: topText, bottomText: bottomText, originalImage: imageView.image!, memedImage: memedImage!)
+
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(meme)
+
+        print(meme)
     }
 
     private func fitImageViewIfNeeded() {
