@@ -32,6 +32,7 @@ class MemeViewController: UIViewController {
         self?.bottomField.isEnabled = true
         self?.fitImageViewIfNeeded()
     }
+// MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +49,17 @@ class MemeViewController: UIViewController {
 
         subscribeToWillShowNotifications()
         subscribeToWillHideNotifications()
+        hideTabBar(visable: true)
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         fitImageViewIfNeeded()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        hideTabBar(visable: false)
     }
 
     @IBAction func pickFromLibrary(_ sender: Any) {
@@ -102,8 +110,6 @@ class MemeViewController: UIViewController {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
             appDelegate.memes.append(meme)
-
-        print(meme)
     }
 
     private func fitImageViewIfNeeded() {
@@ -132,5 +138,9 @@ class MemeViewController: UIViewController {
 
         heightEditorConstraint.constant = newHeight
         widthEditorConstraint.constant = newWidth
+    }
+
+    private func hideTabBar(visable: Bool) {
+        tabBarController?.tabBar.isHidden = visable
     }
 }

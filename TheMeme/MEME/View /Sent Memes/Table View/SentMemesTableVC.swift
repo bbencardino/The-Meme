@@ -24,4 +24,16 @@ class SentMemesTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         memes.count
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        // instantiate the view controller
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "SentMemesDetailViewController") as! SentMemesDetailViewController
+
+        // send the selected meme to the view controller
+        detailVC.memes = memes[indexPath.row]
+
+        // push the view controller
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
