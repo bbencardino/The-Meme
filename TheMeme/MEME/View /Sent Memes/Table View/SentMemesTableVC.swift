@@ -15,12 +15,16 @@ class SentMemesTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableCell", for: indexPath)
-        cell.imageView?.frame.size = CGSize(width: 50, height: 50)
-        cell.textLabel?.text = memes[indexPath.row].topText
-        cell.imageView?.image = memes[indexPath.row].memedImage
+
+        let meme = memes[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Kefa Regular", size: 18)
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.textLabel?.text = meme.topText
+        cell.imageView?.image = meme.memedImage
 
         return cell
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         memes.count
     }

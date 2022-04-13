@@ -88,7 +88,6 @@ class MemeViewController: UIViewController {
         present(ac, animated: true)
     }
 
-
     @IBAction func cancelMeme(_ sender: Any) {
         editorView.isHidden = true
         shareButton.isEnabled = false
@@ -101,6 +100,7 @@ class MemeViewController: UIViewController {
     }
 
     private func save() {
+
         let topText = topField.text ?? ""
         let bottomText = bottomField.text ?? ""
 
@@ -110,6 +110,8 @@ class MemeViewController: UIViewController {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
             appDelegate.memes.append(meme)
+
+        shareButton.isEnabled = false
     }
 
     private func fitImageViewIfNeeded() {
