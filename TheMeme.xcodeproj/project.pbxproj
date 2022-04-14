@@ -406,8 +406,8 @@
 				DEVELOPMENT_TEAM = 6GU6D4AYLD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheMeme/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "The Meme can use your camera to make new memes ";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The Meme can use your library to grab the not memed images";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Meme can use your camera to make funny memes";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The Meme can use your library to grab an image and transform it in a meme";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -436,8 +436,8 @@
 				DEVELOPMENT_TEAM = 6GU6D4AYLD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TheMeme/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "The Meme can use your camera to make new memes ";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The Meme can use your library to grab the not memed images";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Meme can use your camera to make funny memes";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "The Meme can use your library to grab an image and transform it in a meme";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

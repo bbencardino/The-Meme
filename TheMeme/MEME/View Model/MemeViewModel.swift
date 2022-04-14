@@ -9,7 +9,7 @@ class MemeViewModel {
     let memeTextAttributes: [NSAttributedString.Key: Any] = [.strokeColor: UIColor.black,
                                                              .foregroundColor: UIColor.white,
                                                              .font: UIFont(name: "HelveticaNeue-CondensedBlack",size: 40)!,
-                                                             .strokeWidth: -5]
+                                                             .strokeWidth: -3.5]
 
     //MARK: - Meme genenator
     func renderImage(from view: UIView) -> UIImage {
