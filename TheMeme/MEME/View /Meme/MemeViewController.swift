@@ -26,11 +26,13 @@ class MemeViewController: UIViewController {
         self?.shareButton.isEnabled = true
         self?.imageView.contentMode = .scaleAspectFit
 
-        self?.topField.text = self?.viewModel.topDefaultText
-        self?.bottomField.text = self?.viewModel.bottomDefaultText
-        self?.topField.isEnabled = true
-        self?.bottomField.isEnabled = true
+        guard let bottomField = self?.bottomField else { return }
+        guard let topField = self?.topField else { return }
+
+        self?.configureText(field: bottomField, enable: true)
+        self?.configureText(field: topField, enable: true)
         self?.fitImageViewIfNeeded()
+
     }
 // MARK: - Life cycle
 
@@ -99,10 +101,12 @@ class MemeViewController: UIViewController {
         shareButton.isEnabled = false
     }
     //MARK: - Private functions
-    private func configureText(field: UITextField) {
+    private func configureText(field: UITextField, enable: Bool = false) {
         field.delegate = textFieldDelegate
         field.defaultTextAttributes = viewModel.memeTextAttributes
         field.textAlignment = .center
+        field.isEnabled = enable
+        field.text = viewModel.defaultText
     }
 
     private func save() {

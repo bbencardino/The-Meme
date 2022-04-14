@@ -5,9 +5,7 @@ class MemeViewModel {
     var didTopTextFieldBeginEditing = false
     var didBottomTextFieldBeginEditing = false
 
-    let topDefaultText = "TOP TEXT"
-    let bottomDefaultText = "BOTTOM TEXT"
-
+    let defaultText = "TEXT"
     let memeTextAttributes: [NSAttributedString.Key: Any] = [.strokeColor: UIColor.black,
                                                              .foregroundColor: UIColor.white,
                                                              .font: UIFont(name: "HelveticaNeue-CondensedBlack",size: 40)!,

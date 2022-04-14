@@ -11,7 +11,7 @@ final class TextFieldDelegate: NSObject, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         MemeViewController.activeTextField = textField
 
-        if textField.text == viewModel.topDefaultText || textField.text == viewModel.bottomDefaultText {
+        if textField.text == viewModel.defaultText {
             textField.text = ""
         }
     }
