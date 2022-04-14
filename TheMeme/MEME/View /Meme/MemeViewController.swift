@@ -74,21 +74,27 @@ class MemeViewController: UIViewController {
         present(cameraController, animated: true)
     }
 
+    @IBAction func cancelMeme(_ sender: Any) {
+        presentSentMemes()
+    }
+
     @IBAction func shareMeme(_ sender: Any) {
         memedImage = viewModel.renderImage(from: editorView)
        
         let ac = UIActivityViewController(activityItems: [memedImage!],
                                           applicationActivities: nil)
+
         ac.completionWithItemsHandler = { _, completed, _, _ in
             if completed {
                 self.save()
                 self.editorView.isHidden = true
+                self.presentSentMemes()
             }
         }
         present(ac, animated: true)
     }
 
-    @IBAction func cancelMeme(_ sender: Any) {
+    @IBAction func deleteMeme(_ sender: Any) {
         editorView.isHidden = true
         shareButton.isEnabled = false
     }
@@ -144,5 +150,15 @@ class MemeViewController: UIViewController {
 
     private func hideTabBar(visable: Bool) {
         tabBarController?.tabBar.isHidden = visable
+    }
+
+    private func presentSentMemes() {
+
+        guard let sentMemesTabBar = storyboard?.instantiateViewController(withIdentifier: "TabBarController") else { return }
+
+        sentMemesTabBar.modalPresentationStyle = .fullScreen
+        present(sentMemesTabBar, animated: true) {
+            self.hideTabBar(visable: false)
+        }
     }
 }

@@ -13,7 +13,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="dtd-cD-afU">
             <objects>
-                <tabBarController id="qtq-J8-aVh" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="qtq-J8-aVh" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oM5-GS-tZN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -177,7 +177,7 @@
         <!--Table Sent Memes-->
         <scene sceneID="rfF-OM-0jY">
             <objects>
-                <tableViewController id="AGB-dT-lhc" userLabel="Table Sent Memes" customClass="SentMemesTableVC" customModule="TheMeme" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SentMemesTableVC" id="AGB-dT-lhc" userLabel="Table Sent Memes" customClass="SentMemesTableVC" customModule="TheMeme" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fhe-4m-acn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,22 +231,30 @@
                                 <color key="barTintColor" red="0.87281472339999999" green="0.97991861270000002" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                 <items>
                                     <navigationItem id="fOf-tU-hu1">
-                                        <barButtonItem key="leftBarButtonItem" id="n2f-kh-iea" userLabel="Share Button">
-                                            <imageReference key="image" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
-                                            <imageReference key="landscapeImage" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="PWS-iv-RZj" userLabel="Delete Button">
                                             <color key="tintColor" systemColor="systemMintColor"/>
                                             <connections>
-                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="rof-hU-85P"/>
+                                                <action selector="cancelMeme:" destination="BYZ-38-t0r" id="s0R-yG-iMw"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" id="FI4-Dl-DeZ" userLabel="Cancel Button">
-                                            <imageReference key="image" image="trash.fill" catalog="system" symbolScale="large"/>
-                                            <imageReference key="landscapeImage" image="trash.fill" catalog="system" symbolScale="large"/>
-                                            <color key="tintColor" systemColor="systemMintColor"/>
-                                            <connections>
-                                                <action selector="cancelMeme:" destination="BYZ-38-t0r" id="neS-HI-7Qq"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem id="FI4-Dl-DeZ" userLabel="Delete Button">
+                                                <imageReference key="image" image="trash.fill" catalog="system" symbolScale="large"/>
+                                                <imageReference key="landscapeImage" image="trash.fill" catalog="system" symbolScale="large"/>
+                                                <color key="tintColor" systemColor="systemMintColor"/>
+                                                <connections>
+                                                    <action selector="deleteMeme:" destination="BYZ-38-t0r" id="Ldj-Na-Hxs"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem id="n2f-kh-iea" userLabel="Share Button">
+                                                <imageReference key="image" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
+                                                <imageReference key="landscapeImage" image="square.and.arrow.up.fill" catalog="system" symbolScale="large"/>
+                                                <color key="tintColor" systemColor="systemMintColor"/>
+                                                <connections>
+                                                    <action selector="shareMeme:" destination="BYZ-38-t0r" id="rof-hU-85P"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -333,7 +341,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Cke-bi-csN"/>
+        <segue reference="Fck-bk-94q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.on.rectangle" catalog="system" width="128" height="96"/>
